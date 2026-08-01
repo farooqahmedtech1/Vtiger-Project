@@ -4,7 +4,7 @@ export class Utility {
         this.page = page;
     }
 
-    async launchApplication(url) {
+    async launchurl(url) {
         await this.page.goto(url);
     }
 
