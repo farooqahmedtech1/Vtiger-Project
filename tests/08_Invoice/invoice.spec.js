@@ -158,7 +158,7 @@ test('POM', async ({ page }) => {
 
 })
 
-test.only('POM with Utility', async ({ page }) => {
+test('POM with Utility', async ({ page }) => {
 
     test.slow();
 

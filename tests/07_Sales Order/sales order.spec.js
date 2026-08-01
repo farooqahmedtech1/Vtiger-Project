@@ -165,7 +165,7 @@ test('POM', async ({ page }) => {
     await order.createSalesOrder(salesorder.subject,salesorder.carrier)
 })
 
-test.only('POM1', async ({ page }) => {
+test('POM1', async ({ page }) => {
     test.slow(); 
     const signin = new loginclass(page);
     const order = new SalesOrderPage(page);

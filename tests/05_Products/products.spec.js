@@ -68,7 +68,7 @@ test('POM', async ({ page }) => {
     await product.createProduct(products.productname,products.productcategory)
 })
 
-test.only('POM1', async ({ page }) => {
+test('POM1', async ({ page }) => {
     test.slow();
     const loginPage = new loginclass(page);
 const productPage = new ProductsPage(page);

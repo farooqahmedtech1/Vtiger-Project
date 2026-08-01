@@ -81,7 +81,7 @@ test('POM', async ({ page }) => {
     // await page.locator('//a[text()="Sign Out"]').click();
 });
 
-test.only('POM1',async ({page})=>{
+test('POM1',async ({page})=>{
 await test.slow();
 const signin = new loginclass(page);
 const org = new OrganizationPage(page);

@@ -164,7 +164,7 @@ test('POM', async ({ page }) => {
     await quotes.createQuote(quote.subject,quote.carrier)
 })
 
-test.only('POM1', async ({ page }) => {
+test('POM1', async ({ page }) => {
     test.slow(); 
     const loginPage = new loginclass(page);
     const quotesPage = new QuotesPage(page);

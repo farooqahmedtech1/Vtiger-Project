@@ -89,7 +89,7 @@ test('pom3', async ({ page }) => {
     await leadPage.details('Mr.',leads.firstname,leads.lastname,leads.company_name);
 });
 
-test.only('pom4', async ({ page }) => {
+test('pom4', async ({ page }) => {
     test.slow()
 const loginPage = new loginclass(page);
 const leadPage = new leadsclass(page);

@@ -86,7 +86,7 @@ test('POM', async ({ page }) => {
         contacts.organization,'Employee')
 })
 
-test.only("Create Contact", async ({ page }) => {
+test("Create Contact", async ({ page }) => {
     test.slow()
      const loginPage = new loginclass(page); 
     const contact = new ContactsPage(page);

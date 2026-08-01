@@ -82,7 +82,7 @@ test('POM', async ({ page }) => {
 
 })
 
-test.only('POM1', async ({ page }) => {
+test('POM1', async ({ page }) => {
     test.slow();
     const loginPage = new loginclass(page);
     const opportunityPage = new OpportunitiesPage(page);
