@@ -62,7 +62,7 @@ test('POM', async ({ page }) => {
     const signin = new loginclass(page);
     const product = new ProductsPage(page);
 
-    await signin.launchurl(login.url);
+    await signin.launchApplication(login.url);
     await signin.details(login.username, login.password);
 
     await product.createProduct(products.productname,products.productcategory)

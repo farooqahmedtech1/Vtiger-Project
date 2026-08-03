@@ -75,7 +75,7 @@ test('POM', async ({ page }) => {
     const signin = new loginclass(page);
     const opportunity = new OpportunitiesPage(page);
 
-    await signin.launchurl(login.url);
+    await signin.launchApplication(login.url);
     await signin.details(login.username, login.password);
 
     await opportunity.createOpportunity(opportunities.potentialname,opportunities.Relatedto,'New Business','500000')

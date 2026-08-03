@@ -79,7 +79,7 @@ test('POM', async ({ page }) => {
     let signin = new loginclass(page);
     let contact = new ContactsPage(page);
 
-    await signin.launchurl(login.url);
+    await signin.launchApplication(login.url);
     await signin.details(login.username, login.password);
 
     await contact.createContact('Mr.',contacts.firstname,contacts.lastname,
@@ -92,7 +92,6 @@ test("Create Contact", async ({ page }) => {
     const contact = new ContactsPage(page);
 
 await contact.launchApplication(login.url);
-
 await loginPage.details(login.username, login.password);
 
 await contact.createContact("Mr.","Farooq","Ahmed","TCS Technologies Pvt Ltd","Employee");

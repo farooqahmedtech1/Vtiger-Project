@@ -1,4 +1,4 @@
-import { test } from '@playwright/test';
+import { test, expect } from '@playwright/test';
 import login from '../../testdata/login.json'
 import organization from '../../testdata/02_organization.json'
 import { loginclass } from '../../pages/login';
@@ -61,7 +61,7 @@ test('ddt', async ({ page }) => {
     // console.log('Organization is not created');
     //     }
 
-        await expect(page.locator('//input[@name="accountname"]')).toContainText(accountname)
+        await expect(page.locator('//input[@name="accountname"]')).toHaveValue(accountname);
         await page.locator('//img[@src="themes/softed/images/user.PNG"]').hover()
     await page.locator('//a[text()="Sign Out"]').click()
 
@@ -73,7 +73,7 @@ test('POM', async ({ page }) => {
     let org = new OrganizationPage(page);
 
     
-    await signin.launchurl(login.url);
+    await signin.launchApplication(login.url);
     await signin.details(login.username, login.password);
     await org.createOrg(organization.accountname,organization.website,'Technology','Customer');
 

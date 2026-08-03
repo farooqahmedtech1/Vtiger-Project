@@ -159,8 +159,8 @@ test('POM', async ({ page }) => {
     const signin = new loginclass(page)
     const order = new SalesOrderPage(page)
 
-    await signin.launchurl(login.url);
-    await signin.details(login.username, login.password)
+    await signin.launchApplication(login.url);
+    await signin.details(login.username, login.password);
 
     await order.createSalesOrder(salesorder.subject,salesorder.carrier)
 })
