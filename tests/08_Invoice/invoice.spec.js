@@ -150,8 +150,8 @@ test('POM', async ({ page }) => {
     let signin = new loginclass(page)
     let invoice = new InvoicePage(page)
 
-    await signin.launchurl(login.url)
-    await signin.details(login.username, login.password)
+    await signin.launchApplication(login.url);
+    await signin.details(login.username, login.password);
 
     await invoice.createInvoice(invoiceData.subject,invoiceData.Contact,invoiceData.Organization,16,'August',2026,'Farooq ahmed,sarjapura,bangalore','Bangalore',
         'Karnataka','581102','India','CRM Automation Suite','1','500000')
