@@ -65,17 +65,19 @@ test('ddt',async ({page}) => {
 
 test('pom',async({page})=>{
     let signin= new loginclass(page)
-    await page.goto(login.url)
-    await signin.username.fill(login.username)
-    await signin.password.fill(login.password)
-    await signin.button.click()
+    // await page.goto(login.url)
+    // await signin.username.fill(login.username)
+    // await signin.password.fill(login.password)
+    // await signin.button.click()
+    await signin.launchApplication(login.url);
+    await signin.details(login.username, login.password);
 
 })
 
 test('pom2', async({page})=>{
     let sign= new loginclass (page)
-    await sign.launchurl(login.url)
-    await sign.details(login.username,login.password)
+    await signin.launchApplication(login.url);
+    await signin.details(login.username, login.password);
 })
 
 test('pom3', async ({ page }) => {
