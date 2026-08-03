@@ -27,6 +27,10 @@ export class loginclass extends Utility {
         this.login = page.getByRole('button', { name: 'Login' });
     }
 
+    async launchApplication(url) {
+        await this.page.goto(url);
+    }
+
     async details(username, password) {
         await this.fillText(this.username, username);
         await this.fillText(this.password, password);
