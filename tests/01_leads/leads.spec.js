@@ -74,30 +74,37 @@ test('pom',async({page})=>{
 
 })
 
-test('pom2', async({page})=>{
-    let sign= new loginclass (page)
-    await signin.launchApplication(login.url);
-    await signin.details(login.username, login.password);
-})
+test('pom2', async ({ page }) => {
+    const sign = new loginclass(page);
+
+    await sign.launchApplication(login.url);
+    await sign.details(login.username, login.password);
+});
 
 test('pom3', async ({ page }) => {
     test.slow();
+
     const loginPage = new loginclass(page);
     const leadPage = new leadsclass(page);
 
-    await signin.launchApplication(login.url);
-    await signin.details(login.username, login.password);
+    await loginPage.launchApplication(login.url);
+    await loginPage.details(login.username, login.password);
 
     await leadPage.details('Mr.',leads.firstname,leads.lastname,leads.company_name);
 });
 
 test('pom4', async ({ page }) => {
-    test.slow()
-const loginPage = new loginclass(page);
-const leadPage = new leadsclass(page);
+    test.slow();
 
-await loginPage.launchApplication(login.url);
-await loginPage.details(login.username, login.password);
+    const loginPage = new loginclass(page);
+    const leadPage = new leadsclass(page);
 
-await leadPage.details('Mr.',leads.firstname,leads.lastname,leads.company_name);
-})
+    await loginPage.launchApplication(login.url);
+    await loginPage.details(login.username, login.password);
+
+    await leadPage.details('Mr.',leads.firstname,leads.lastname,leads.company_name);
+
+    await expect(
+        page.locator('//span[@id="dtlview_Last Name"]')
+    ).toContainText(leads.lastname);
+});
