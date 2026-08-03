@@ -83,8 +83,8 @@ test('pom3', async ({ page }) => {
     const loginPage = new loginclass(page);
     const leadPage = new leadsclass(page);
 
-    await loginPage.launchurl(login.url);
-    await loginPage.details(login.username, login.password);
+    await signin.launchApplication(login.url);
+    await signin.details(login.username, login.password);
 
     await leadPage.details('Mr.',leads.firstname,leads.lastname,leads.company_name);
 });
